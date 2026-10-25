@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${version}",
+  "name": "${mod_name}",
+  "description": "A minimal CC: Tweaked add-on: Cryptographic Accelerator, NFC Reader/Card and RFID Scanner/Badge. Derived from Classic Peripherals by AlexDevs.",
+  "authors": ["yo_le_zz", "AlexDevs (original Classic Peripherals)"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["minimalperipherals.MinimalPeripherals"]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "java": ">=21",
+    "computercraft": ">=${cct_version}"
+  }
+}

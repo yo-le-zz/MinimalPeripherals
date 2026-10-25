@@ -1,0 +1,50 @@
+{
+  "variants": {
+    "active=false,facing=north": {
+      "model": "minimalperipherals:block/rfid_scanner"
+    },
+    "active=false,facing=east": {
+      "model": "minimalperipherals:block/rfid_scanner",
+      "y": 90
+    },
+    "active=false,facing=south": {
+      "model": "minimalperipherals:block/rfid_scanner",
+      "y": 180
+    },
+    "active=false,facing=west": {
+      "model": "minimalperipherals:block/rfid_scanner",
+      "y": 270
+    },
+    "active=false,facing=up": {
+      "model": "minimalperipherals:block/rfid_scanner",
+      "x": 270
+    },
+    "active=false,facing=down": {
+      "model": "minimalperipherals:block/rfid_scanner",
+      "x": 90
+    },
+    "active=true,facing=north": {
+      "model": "minimalperipherals:block/rfid_scanner_on"
+    },
+    "active=true,facing=east": {
+      "model": "minimalperipherals:block/rfid_scanner_on",
+      "y": 90
+    },
+    "active=true,facing=south": {
+      "model": "minimalperipherals:block/rfid_scanner_on",
+      "y": 180
+    },
+    "active=true,facing=west": {
+      "model": "minimalperipherals:block/rfid_scanner_on",
+      "y": 270
+    },
+    "active=true,facing=up": {
+      "model": "minimalperipherals:block/rfid_scanner_on",
+      "x": 270
+    },
+    "active=true,facing=down": {
+      "model": "minimalperipherals:block/rfid_scanner_on",
+      "x": 90
+    }
+  }
+}

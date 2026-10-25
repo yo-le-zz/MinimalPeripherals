@@ -1,0 +1,91 @@
+package minimalperipherals.nfc;
+
+import com.mojang.serialization.MapCodec;
+import minimalperipherals.dataholder.DataHolderItem;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.phys.BlockHitResult;
+
+public class NfcReaderBlock extends HorizontalDirectionalBlock implements EntityBlock {
+    public enum NfcReaderState implements StringRepresentable {
+        NONE("none"),
+        READING("reading"),
+        WRITING("writing"),
+        SIGNING("signing");
+
+        private final String name;
+
+        NfcReaderState(String name) {
+            this.name = name;
+        }
+
+        @Override
+        public String getSerializedName() {
+            return name;
+        }
+    }
+
+    public static final EnumProperty<NfcReaderState> STATE = EnumProperty.create("state", NfcReaderState.class);
+
+    public NfcReaderBlock(Properties properties) {
+        super(properties);
+        registerDefaultState(defaultBlockState()
+                .setValue(FACING, Direction.NORTH)
+                .setValue(STATE, NfcReaderState.NONE));
+    }
+
+    @Override
+    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
+        return simpleCodec(NfcReaderBlock::new);
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(FACING).add(STATE);
+    }
+
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        return defaultBlockState()
+                .setValue(FACING, context.getHorizontalDirection().getOpposite())
+                .setValue(STATE, NfcReaderState.NONE);
+    }
+
+    @Override
+    public InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if (stack.getItem() instanceof DataHolderItem && level.getBlockEntity(pos) instanceof NfcReaderBlockEntity reader) {
+            if (!level.isClientSide()) {
+                reader.onUse(stack);
+            }
+            return InteractionResult.SUCCESS;
+        }
+
+        return InteractionResult.TRY_WITH_EMPTY_HAND;
+    }
+
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new NfcReaderBlockEntity(pos, state);
+    }
+
+    @Override
+    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        level.setBlockAndUpdate(pos, state.setValue(STATE, NfcReaderState.NONE));
+    }
+}

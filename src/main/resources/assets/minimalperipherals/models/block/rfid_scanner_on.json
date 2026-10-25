@@ -1,0 +1,7 @@
+{
+  "parent": "minimalperipherals:block/rfid_scanner",
+  "textures": {
+    "all": "minimalperipherals:block/rfid_scanner_on",
+    "particle": "minimalperipherals:block/rfid_scanner_on"
+  }
+}

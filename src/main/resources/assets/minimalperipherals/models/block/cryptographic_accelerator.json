@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "top": "minimalperipherals:block/cryptographic_accelerator_top",
+    "front": "minimalperipherals:block/cryptographic_accelerator_front",
+    "side": "minimalperipherals:block/cryptographic_accelerator_side",
+    "bottom": "minimalperipherals:block/cryptographic_accelerator_bottom"
+  }
+}

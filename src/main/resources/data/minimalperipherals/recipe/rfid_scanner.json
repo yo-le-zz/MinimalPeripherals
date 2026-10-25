@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    "sss",
+    "scs",
+    "sss"
+  ],
+  "key": {
+    "s": "minecraft:stone",
+    "c": "minecraft:copper_ingot"
+  },
+  "result": {
+    "id": "minimalperipherals:rfid_scanner",
+    "count": 1
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "minimalperipherals:block/cryptographic_accelerator"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=north,state=none": {
+      "model": "minimalperipherals:block/nfc_reader_none"
+    },
+    "facing=east,state=none": {
+      "model": "minimalperipherals:block/nfc_reader_none",
+      "y": 90
+    },
+    "facing=south,state=none": {
+      "model": "minimalperipherals:block/nfc_reader_none",
+      "y": 180
+    },
+    "facing=west,state=none": {
+      "model": "minimalperipherals:block/nfc_reader_none",
+      "y": 270
+    },
+    "facing=north,state=reading": {
+      "model": "minimalperipherals:block/nfc_reader_reading"
+    },
+    "facing=east,state=reading": {
+      "model": "minimalperipherals:block/nfc_reader_reading",
+      "y": 90
+    },
+    "facing=south,state=reading": {
+      "model": "minimalperipherals:block/nfc_reader_reading",
+      "y": 180
+    },
+    "facing=west,state=reading": {
+      "model": "minimalperipherals:block/nfc_reader_reading",
+      "y": 270
+    },
+    "facing=north,state=writing": {
+      "model": "minimalperipherals:block/nfc_reader_writing"
+    },
+    "facing=east,state=writing": {
+      "model": "minimalperipherals:block/nfc_reader_writing",
+      "y": 90
+    },
+    "facing=south,state=writing": {
+      "model": "minimalperipherals:block/nfc_reader_writing",
+      "y": 180
+    },
+    "facing=west,state=writing": {
+      "model": "minimalperipherals:block/nfc_reader_writing",
+      "y": 270
+    },
+    "facing=north,state=signing": {
+      "model": "minimalperipherals:block/nfc_reader_signing"
+    },
+    "facing=east,state=signing": {
+      "model": "minimalperipherals:block/nfc_reader_signing",
+      "y": 90
+    },
+    "facing=south,state=signing": {
+      "model": "minimalperipherals:block/nfc_reader_signing",
+      "y": 180
+    },
+    "facing=west,state=signing": {
+      "model": "minimalperipherals:block/nfc_reader_signing",
+      "y": 270
+    }
+  }
+}
