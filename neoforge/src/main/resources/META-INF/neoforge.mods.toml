@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "${neoforge_loader_version_range}"
+license = "${license}"
+
+[[mods]]
+modId = "${mod_id}"
+version = "${version}"
+displayName = "${mod_name}"
+credits = "${credits}"
+authors = "${mod_author}"
+description = """
+A minimal CC: Tweaked add-on: Cryptographic Accelerator, NFC Reader/Card and RFID Scanner/Badge.
+Derived from Classic Peripherals by AlexDevs.
+"""
+
+[[dependencies.${mod_id}]]
+modId = "neoforge"
+type = "required"
+versionRange = "[${neoforge_version},)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "minecraft"
+type = "required"
+versionRange = "${minecraft_version_range}"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "computercraft"
+type = "required"
+versionRange = "[${cct_version},)"
+ordering = "NONE"
+side = "BOTH"

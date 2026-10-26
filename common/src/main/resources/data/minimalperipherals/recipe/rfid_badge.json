@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    " n ",
+    "ncn",
+    " n "
+  ],
+  "key": {
+    "n": "minecraft:iron_nugget",
+    "c": "minecraft:copper_ingot"
+  },
+  "result": {
+    "id": "minimalperipherals:rfid_badge",
+    "count": 1
+  }
+}

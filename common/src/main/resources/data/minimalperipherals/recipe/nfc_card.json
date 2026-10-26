@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "minecraft:paper",
+    "minecraft:redstone",
+    "minecraft:copper_ingot"
+  ],
+  "result": {
+    "id": "minimalperipherals:nfc_card",
+    "count": 1
+  }
+}

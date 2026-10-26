@@ -1,0 +1,8 @@
+{
+  "itemGroup.minimalperipherals": "Minimal Peripherals",
+  "block.minimalperipherals.nfc_reader": "NFC Reader",
+  "block.minimalperipherals.rfid_scanner": "RFID Scanner",
+  "block.minimalperipherals.cryptographic_accelerator": "Cryptographic Accelerator",
+  "item.minimalperipherals.nfc_card": "NFC Card",
+  "item.minimalperipherals.rfid_badge": "RFID Badge"
+}

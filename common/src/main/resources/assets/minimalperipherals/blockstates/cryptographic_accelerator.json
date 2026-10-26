@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "minimalperipherals:block/cryptographic_accelerator"
+    },
+    "facing=east": {
+      "model": "minimalperipherals:block/cryptographic_accelerator",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "minimalperipherals:block/cryptographic_accelerator",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "minimalperipherals:block/cryptographic_accelerator",
+      "y": 270
+    }
+  }
+}

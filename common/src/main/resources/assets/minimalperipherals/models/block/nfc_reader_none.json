@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "minimalperipherals:block/nfc_reader_top",
+    "front": "minimalperipherals:block/nfc_reader_front",
+    "side": "minimalperipherals:block/nfc_reader_side"
+  }
+}

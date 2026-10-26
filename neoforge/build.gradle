@@ -1,0 +1,77 @@
+plugins {
+    id "net.neoforged.moddev"
+}
+
+base {
+    archivesName = "${archives_base_name}-neoforge"
+}
+
+neoForge {
+    version = neoforge_version
+
+    parchment {
+        minecraftVersion = parchment_minecraft
+        mappingsVersion = parchment_version
+    }
+
+    runs {
+        configureEach {
+            ideName = "NeoForge ${it.name.capitalize()} (${project.path})"
+        }
+        client {
+            client()
+        }
+        server {
+            server()
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "SquidDev"
+                url = "https://maven.squiddev.cc"
+            }
+        }
+        filter { includeGroup("cc.tweaked") }
+    }
+}
+
+dependencies {
+    // CC: Tweaked (only its public API is used at compile time)
+    compileOnly "cc.tweaked:cc-tweaked-${minecraft_version}-core-api:${cct_version}"
+    compileOnly "cc.tweaked:cc-tweaked-${minecraft_version}-common-api:${cct_version}"
+    compileOnly "cc.tweaked:cc-tweaked-${minecraft_version}-forge-api:${cct_version}"
+    implementation "cc.tweaked:cc-tweaked-${minecraft_version}-forge:${cct_version}"
+
+    // BouncyCastle crypto (jar-in-jar)
+    jarJar(implementation("org.bouncycastle:bcprov-jdk18on:${bouncycastle_version}"))
+}
+
+processResources {
+    var props = [
+            "version"                      : rootProject.mod_version,
+            "mod_id"                       : rootProject.mod_id,
+            "mod_name"                     : rootProject.mod_name,
+            "mod_author"                   : rootProject.mod_author,
+            "license"                      : rootProject.license,
+            "credits"                      : rootProject.credits,
+            "minecraft_version_range"      : rootProject.minecraft_version_range,
+            "neoforge_version"             : rootProject.neoforge_version,
+            "neoforge_loader_version_range": rootProject.neoforge_loader_version_range,
+            "cct_version"                  : rootProject.cct_version
+    ]
+    inputs.properties(props)
+    filesMatching("META-INF/neoforge.mods.toml") {
+        expand props
+    }
+}

@@ -1,79 +1,37 @@
 plugins {
-    id 'fabric-loom' version '1.17-SNAPSHOT'
-    id 'maven-publish'
+    id "fabric-loom" version "1.17-SNAPSHOT" apply false
+    // see https://projects.neoforged.net/neoforged/moddevgradle for new versions
+    id "net.neoforged.moddev" version "2.0.141" apply false
 }
 
-version = project.mod_version
-group = project.maven_group
+subprojects {
+    apply plugin: "maven-publish"
 
-base {
-    archivesName = project.archives_base_name
-}
+    version = "${rootProject.mod_version}+${rootProject.minecraft_version}"
+    group = rootProject.maven_group
 
-repositories {
-    mavenCentral()
-    exclusiveContent {
-        forRepository {
-            maven {
-                name = 'SquidDev'
-                url = 'https://maven.squiddev.cc'
+    tasks.withType(JavaCompile).configureEach {
+        it.options.release = 21
+        it.options.encoding = "UTF-8"
+    }
+
+    // Both loaders compile the shared sources of /common directly.
+    plugins.withType(JavaPlugin) {
+        java {
+            withSourcesJar()
+            sourceCompatibility = JavaVersion.VERSION_21
+            targetCompatibility = JavaVersion.VERSION_21
+        }
+
+        sourceSets.main {
+            java.srcDir(rootProject.file("common/src/main/java"))
+            resources.srcDir(rootProject.file("common/src/main/resources"))
+        }
+
+        jar {
+            from(rootProject.file("LICENSE.txt")) {
+                rename { "${it}_${rootProject.archives_base_name}" }
             }
         }
-        filter { includeGroup('cc.tweaked') }
-    }
-    maven {
-        name = 'ParchmentMC'
-        url = 'https://maven.parchmentmc.org/'
-    }
-}
-
-dependencies {
-    minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings loom.layered {
-        officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-${project.parchment_minecraft}:${project.parchment_version}@zip")
-    }
-
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
-    // CC: Tweaked (only its public API is used)
-    modCompileOnly "cc.tweaked:cc-tweaked-${project.minecraft_version}-fabric-api:${project.cct_version}"
-    modRuntimeOnly "cc.tweaked:cc-tweaked-${project.minecraft_version}-fabric:${project.cct_version}"
-
-    // Crypto, bundled in the jar
-    implementation "org.bouncycastle:bcprov-jdk18on:${project.bouncycastle_version}"
-    include "org.bouncycastle:bcprov-jdk18on:${project.bouncycastle_version}"
-}
-
-processResources {
-    var props = [
-            'version'          : project.version,
-            'mod_id'           : project.mod_id,
-            'mod_name'         : project.mod_name,
-            'minecraft_version': project.minecraft_version,
-            'loader_version'   : project.loader_version,
-            'cct_version'      : project.cct_version
-    ]
-    inputs.properties(props)
-    filesMatching('fabric.mod.json') {
-        expand props
-    }
-}
-
-tasks.withType(JavaCompile).configureEach {
-    it.options.release = 21
-    it.options.encoding = 'UTF-8'
-}
-
-java {
-    withSourcesJar()
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
-}
-
-jar {
-    from('LICENSE.txt') {
-        rename { "${it}_${project.archives_base_name}" }
     }
 }

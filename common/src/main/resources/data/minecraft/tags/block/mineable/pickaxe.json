@@ -1,0 +1,7 @@
+{
+  "values": [
+    "minimalperipherals:nfc_reader",
+    "minimalperipherals:rfid_scanner",
+    "minimalperipherals:cryptographic_accelerator"
+  ]
+}
