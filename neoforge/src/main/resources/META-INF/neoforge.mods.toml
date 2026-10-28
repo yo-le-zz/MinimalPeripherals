@@ -9,7 +9,7 @@ displayName = "${mod_name}"
 credits = "${credits}"
 authors = "${mod_author}"
 description = """
-A minimal CC: Tweaked add-on: Cryptographic Accelerator, NFC Reader/Card and RFID Scanner/Badge.
+CC: Tweaked add-on with a general Cryptographic Accelerator and dozens of specialized, faster crypto blocks.
 Derived from Classic Peripherals by AlexDevs.
 """
 

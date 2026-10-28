@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "cryptographyperipherals:block/classic_cipher"
+    },
+    "facing=east": {
+      "model": "cryptographyperipherals:block/classic_cipher",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "cryptographyperipherals:block/classic_cipher",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "cryptographyperipherals:block/classic_cipher",
+      "y": 270
+    }
+  }
+}

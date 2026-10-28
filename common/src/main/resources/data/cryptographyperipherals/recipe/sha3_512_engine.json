@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "cryptographyperipherals:cryptographic_accelerator",
+    "minecraft:redstone",
+    "minecraft:amethyst_shard"
+  ],
+  "result": {
+    "id": "cryptographyperipherals:sha3_512_engine",
+    "count": 1
+  }
+}

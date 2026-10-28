@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "cryptographyperipherals:cryptographic_accelerator",
+    "minecraft:redstone",
+    "minecraft:gold_nugget"
+  ],
+  "result": {
+    "id": "cryptographyperipherals:blake3_engine",
+    "count": 1
+  }
+}

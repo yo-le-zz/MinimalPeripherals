@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "cryptographyperipherals:block/entropy_source"
+    },
+    "facing=east": {
+      "model": "cryptographyperipherals:block/entropy_source",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "cryptographyperipherals:block/entropy_source",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "cryptographyperipherals:block/entropy_source",
+      "y": 270
+    }
+  }
+}

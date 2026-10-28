@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "cryptographyperipherals:sha512_engine"
+        }
+      ]
+    }
+  ],
+  "random_sequence": "cryptographyperipherals:blocks/sha512_engine"
+}

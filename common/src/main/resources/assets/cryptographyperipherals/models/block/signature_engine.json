@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "cryptographyperipherals:block/signature_engine_top",
+    "front": "cryptographyperipherals:block/signature_engine_front",
+    "side": "cryptographyperipherals:block/signature_engine_side"
+  }
+}

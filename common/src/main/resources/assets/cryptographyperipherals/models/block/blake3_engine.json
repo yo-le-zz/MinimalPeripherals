@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "cryptographyperipherals:block/blake3_engine_top",
+    "front": "cryptographyperipherals:block/blake3_engine_front",
+    "side": "cryptographyperipherals:block/blake3_engine_side"
+  }
+}

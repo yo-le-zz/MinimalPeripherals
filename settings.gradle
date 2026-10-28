@@ -13,7 +13,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = "MinimalPeripherals"
+rootProject.name = "CryptographyPeripherals"
 
 // "common" only holds the shared sources, it is compiled inside each loader project.
 include("fabric")

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "cryptographyperipherals:block/classic_cipher_top",
+    "front": "cryptographyperipherals:block/classic_cipher_front",
+    "side": "cryptographyperipherals:block/classic_cipher_side"
+  }
+}

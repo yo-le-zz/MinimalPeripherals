@@ -3,12 +3,12 @@
   "id": "${mod_id}",
   "version": "${version}",
   "name": "${mod_name}",
-  "description": "A minimal CC: Tweaked add-on: Cryptographic Accelerator, NFC Reader/Card and RFID Scanner/Badge. Derived from Classic Peripherals by AlexDevs.",
+  "description": "CC: Tweaked add-on with a general Cryptographic Accelerator and dozens of specialized, faster crypto blocks (hashes, AES, ChaCha20, Ed25519, KDFs, TOTP, Merkle trees and more). Derived from Classic Peripherals by AlexDevs.",
   "authors": ["yo_le_zz", "AlexDevs (original Classic Peripherals)"],
   "license": "MIT",
   "environment": "*",
   "entrypoints": {
-    "main": ["minimalperipherals.fabric.MinimalPeripheralsFabric"]
+    "main": ["cryptographyperipherals.fabric.CryptographyPeripheralsFabric"]
   },
   "depends": {
     "fabricloader": ">=${loader_version}",

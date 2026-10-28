@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "cryptographyperipherals:cryptographic_accelerator",
+    "minecraft:redstone",
+    "minecraft:lapis_lazuli"
+  ],
+  "result": {
+    "id": "cryptographyperipherals:sha3_256_engine",
+    "count": 1
+  }
+}

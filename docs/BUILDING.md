@@ -24,8 +24,8 @@ Output:
 
 | Loader | Jar to install |
 |---|---|
-| Fabric | `fabric/build/libs/minimal-peripherals-fabric-<version>+1.21.11.jar` |
-| NeoForge | `neoforge/build/libs/minimal-peripherals-neoforge-<version>+1.21.11.jar` |
+| Fabric | `fabric/build/libs/cryptography-peripherals-fabric-<version>+1.21.11.jar` |
+| NeoForge | `neoforge/build/libs/cryptography-peripherals-neoforge-<version>+1.21.11.jar` |
 
 Ignore `*-sources.jar` and `fabric/build/devlibs/` (development jars, not for the game).
 
@@ -52,12 +52,33 @@ All the gameplay code lives in `common/`. A loader module only contains what mus
 
 | File | Role |
 |---|---|
-| `common/.../ModRegistry.java` | Creates every block, item, block entity type, component and the creative tab. |
+| `common/.../ModRegistry.java` | Creates every block, item, the shared block entity type and the creative tab. One line per block. |
+| `common/.../block/CryptoBlock.java` | The only block class: it knows how to build its peripheral. |
+| `common/.../peripheral/*.java` | One class per block: the Lua APIs. |
 | `common/.../platform/Platform.java` | Things built differently per loader (block entity type, creative tab). |
-| `fabric/.../MinimalPeripheralsFabric.java` | Registers everything with `Registry.register` and the Fabric peripheral lookup. |
-| `neoforge/.../MinimalPeripheralsNeoForge.java` | Registers everything in `RegisterEvent` and the NeoForge peripheral capability. |
+| `fabric/.../CryptographyPeripheralsFabric.java` | Registers everything with `Registry.register` and the Fabric peripheral lookup. |
+| `neoforge/.../CryptographyPeripheralsNeoForge.java` | Registers everything in `RegisterEvent` and the NeoForge peripheral capability. |
 
-Assets, recipes and loot tables are plain JSON in `common/src/main/resources` (no data generation).
+## Assets
+
+Textures, models, blockstates, item definitions, translations, loot tables, recipes and the pickaxe tag are all generated
+from one table by `tools/generate_assets.py` (Python 3 and Pillow):
+
+```bash
+pip install pillow
+python3 tools/generate_assets.py
+```
+
+The script also checks that its table matches the `engine(...)` lines of `ModRegistry.java`.
+
+## Adding a block
+
+1. Write the Lua API: a class in `common/.../peripheral/` that extends `EnginePeripheral` and has `@LuaFunction` methods.
+2. Add one line to the static block of `ModRegistry.java`: `engine("my_block", MyEngine::new);`
+3. Add the block to the table of `tools/generate_assets.py` (names, 3 letter label, colours, recipe item) and run the script.
+4. Add checks to `examples/engines_test.lua`.
+
+No loader code changes: both loaders register everything that `ModRegistry` contains.
 
 ## Troubleshooting
 
@@ -73,3 +94,17 @@ Assets, recipes and loot tables are plain JSON in `common/src/main/resources` (n
 ## Updating versions
 
 All versions are in `gradle.properties`: `minecraft_version`, `fabric_version`, `loader_version`, `neoforge_version`, `cct_version`, `parchment_version`.
+
+## Testing without Minecraft
+
+The Lua programs of `examples/` can run against the real Java peripherals without starting the game:
+
+```bash
+sudo apt install openjdk-21-jdk libbcprov-java
+pip install jpype1 lupa
+tools/offline-test/run.sh                                # both programs
+tools/offline-test/run.sh examples/engines_test.lua -v   # one program, verbose
+```
+
+It compiles the peripheral classes against small stubs of the CC: Tweaked API and bridges them to a Lua interpreter.
+It does not test blocks, registration or the loaders, only the Lua APIs.

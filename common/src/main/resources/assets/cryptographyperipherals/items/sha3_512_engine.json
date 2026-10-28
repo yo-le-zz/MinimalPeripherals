@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "cryptographyperipherals:block/sha3_512_engine"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "cryptographyperipherals:block/ripemd160_engine_top",
+    "front": "cryptographyperipherals:block/ripemd160_engine_front",
+    "side": "cryptographyperipherals:block/ripemd160_engine_side"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "cryptographyperipherals:block/blake3_engine"
+    },
+    "facing=east": {
+      "model": "cryptographyperipherals:block/blake3_engine",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "cryptographyperipherals:block/blake3_engine",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "cryptographyperipherals:block/blake3_engine",
+      "y": 270
+    }
+  }
+}

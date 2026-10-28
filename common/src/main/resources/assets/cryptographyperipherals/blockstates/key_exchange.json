@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "cryptographyperipherals:block/key_exchange"
+    },
+    "facing=east": {
+      "model": "cryptographyperipherals:block/key_exchange",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "cryptographyperipherals:block/key_exchange",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "cryptographyperipherals:block/key_exchange",
+      "y": 270
+    }
+  }
+}

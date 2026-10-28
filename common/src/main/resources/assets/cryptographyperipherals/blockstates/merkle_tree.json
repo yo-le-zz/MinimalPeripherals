@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "cryptographyperipherals:block/merkle_tree"
+    },
+    "facing=east": {
+      "model": "cryptographyperipherals:block/merkle_tree",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "cryptographyperipherals:block/merkle_tree",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "cryptographyperipherals:block/merkle_tree",
+      "y": 270
+    }
+  }
+}

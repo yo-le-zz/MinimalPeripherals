@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "cryptographyperipherals:cryptographic_accelerator",
+    "minecraft:redstone",
+    "minecraft:glowstone_dust"
+  ],
+  "result": {
+    "id": "cryptographyperipherals:entropy_source",
+    "count": 1
+  }
+}

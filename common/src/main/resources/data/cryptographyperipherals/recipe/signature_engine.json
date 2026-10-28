@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "cryptographyperipherals:cryptographic_accelerator",
+    "minecraft:redstone",
+    "minecraft:ink_sac"
+  ],
+  "result": {
+    "id": "cryptographyperipherals:signature_engine",
+    "count": 1
+  }
+}

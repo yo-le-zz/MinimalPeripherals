@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "cryptographyperipherals:cryptographic_accelerator",
+    "minecraft:redstone",
+    "minecraft:iron_pickaxe"
+  ],
+  "result": {
+    "id": "cryptographyperipherals:pow_miner",
+    "count": 1
+  }
+}

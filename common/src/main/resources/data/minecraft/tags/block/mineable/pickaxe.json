@@ -1,7 +1,30 @@
 {
   "values": [
-    "minimalperipherals:nfc_reader",
-    "minimalperipherals:rfid_scanner",
-    "minimalperipherals:cryptographic_accelerator"
+    "cryptographyperipherals:cryptographic_accelerator",
+    "cryptographyperipherals:md5_engine",
+    "cryptographyperipherals:sha1_engine",
+    "cryptographyperipherals:sha256_engine",
+    "cryptographyperipherals:sha384_engine",
+    "cryptographyperipherals:sha512_engine",
+    "cryptographyperipherals:sha3_256_engine",
+    "cryptographyperipherals:sha3_512_engine",
+    "cryptographyperipherals:ripemd160_engine",
+    "cryptographyperipherals:blake2b_engine",
+    "cryptographyperipherals:blake2s_engine",
+    "cryptographyperipherals:blake3_engine",
+    "cryptographyperipherals:aes_engine",
+    "cryptographyperipherals:chacha_engine",
+    "cryptographyperipherals:signature_engine",
+    "cryptographyperipherals:key_exchange",
+    "cryptographyperipherals:kdf_engine",
+    "cryptographyperipherals:password_hasher",
+    "cryptographyperipherals:totp_generator",
+    "cryptographyperipherals:entropy_source",
+    "cryptographyperipherals:encoder",
+    "cryptographyperipherals:checksum_engine",
+    "cryptographyperipherals:compressor",
+    "cryptographyperipherals:merkle_tree",
+    "cryptographyperipherals:pow_miner",
+    "cryptographyperipherals:classic_cipher"
   ]
 }

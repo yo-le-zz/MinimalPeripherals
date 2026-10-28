@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "cryptographyperipherals:block/encoder"
+    },
+    "facing=east": {
+      "model": "cryptographyperipherals:block/encoder",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "cryptographyperipherals:block/encoder",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "cryptographyperipherals:block/encoder",
+      "y": 270
+    }
+  }
+}

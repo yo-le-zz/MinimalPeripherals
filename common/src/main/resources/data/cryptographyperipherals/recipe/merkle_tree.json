@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "cryptographyperipherals:cryptographic_accelerator",
+    "minecraft:redstone",
+    "minecraft:oak_sapling"
+  ],
+  "result": {
+    "id": "cryptographyperipherals:merkle_tree",
+    "count": 1
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "cryptographyperipherals:block/checksum_engine"
+    },
+    "facing=east": {
+      "model": "cryptographyperipherals:block/checksum_engine",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "cryptographyperipherals:block/checksum_engine",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "cryptographyperipherals:block/checksum_engine",
+      "y": 270
+    }
+  }
+}

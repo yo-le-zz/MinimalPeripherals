@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "cryptographyperipherals:block/chacha_engine_top",
+    "front": "cryptographyperipherals:block/chacha_engine_front",
+    "side": "cryptographyperipherals:block/chacha_engine_side"
+  }
+}

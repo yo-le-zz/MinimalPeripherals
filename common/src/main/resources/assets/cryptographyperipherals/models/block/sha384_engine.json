@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "cryptographyperipherals:block/sha384_engine_top",
+    "front": "cryptographyperipherals:block/sha384_engine_front",
+    "side": "cryptographyperipherals:block/sha384_engine_side"
+  }
+}

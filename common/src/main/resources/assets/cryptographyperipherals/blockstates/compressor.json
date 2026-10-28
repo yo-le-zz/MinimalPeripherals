@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "cryptographyperipherals:block/compressor"
+    },
+    "facing=east": {
+      "model": "cryptographyperipherals:block/compressor",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "cryptographyperipherals:block/compressor",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "cryptographyperipherals:block/compressor",
+      "y": 270
+    }
+  }
+}
